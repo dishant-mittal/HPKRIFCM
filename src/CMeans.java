@@ -10,7 +10,7 @@ import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.mapred.Reducer;
 
 @SuppressWarnings("deprecation")
-public class KMeans {
+public class CMeans {
 	public static String OUT = "outfile";
 	public static String IN = "inputlarger";
 	public static String CENTROID_FILE_NAME = "/centroid.txt";
@@ -125,7 +125,7 @@ public class KMeans {
 		int iteration = 0;
 		boolean isdone = false;
 		while (isdone == false) {
-			JobConf conf = new JobConf(KMeans.class);
+			JobConf conf = new JobConf(CMeans.class);
 			if (iteration == 0) {
 				Path hdfsPath = new Path(input + CENTROID_FILE_NAME);
 				// upload the file to hdfs. Overwrite any existing copy.
